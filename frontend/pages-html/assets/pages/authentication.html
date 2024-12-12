@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AlloMaison.CI - Services a domicile">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="assets/fonts/playfair-display.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Favicon items -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet item for this page -->
+    <link rel="stylesheet" href="../styles/css/authentication.css">
+
+    <!-- Primary meta tag -->
+    <title>AlloMaison | Connexion</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://allomaison.ci">
+    <meta property="og:title" content="AlloMaison.CI | Services a domicile">
+    <meta property="og:description" content="Connectez-vous avec des experts qualifiés pour vos services à domicile">
+    <meta property="og:image" content="https://allomaison.ci/assets/images/og-image.jpg">
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <!-- Left panel - Decorative -->
+        <aside class="auth-banner">
+
+            <div class="auth-banner__content">
+
+                <header class="auth-banner__header">
+                    <p class="logo">AlloMaison.</p>
+                </header>
+
+                <h1 class="auth-banner__title">Quelque soit vos besoins à domicile, nous sommes ici à votre service.</h1>
+                <p class="auth-banner__text">
+                    Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Vivamus luctus urna sed
+                    urna ultricies ac tempor dui sagittis.
+                </p>
+            </div>
+
+            <div class="auth-banner__gradient"></div> <!-- for the dark background styling -->
+
+        </aside>
+
+        <!-- Right panel - Authentication -->
+        <main class="auth-form">
+
+            <!-- form containers -->
+            <div class="auth-form__container" id="authFormsContainer">
+
+                <!-- login form -->
+                <form id="loginForm" class="auth-form__form" novalidate>
+
+                    <h2 class="auth-form__title">Bienvenue !</h2>
+                    <p class="auth-form__subtitle">Entrez vos identifiants pour acceder à votre compte</p>
+
+                    <div class="form-group">
+
+                        <div class="form-group__input-container">
+                            <!-- to replace with 'pattern' from separate regex component -->
+
+                            <!-- email container -->
+                            <label for="loginEmail" class="form-group__label">Email</label>
+                            <input type="email"
+                                   id="loginEmail"
+                                   class="form-group__input"
+                                   required
+                                   autocomplete="email"
+                                   data-validation="EMAIL">
+                            <span class="form-group__error" aria-live="polite"></span>
+
+                            <!-- password container -->
+                            <label for="loginPassword" class="form-group__label">Mot de passe
+                                <a href="#" class="form-group__forgot-password-link">Mot de passe oublié?</a></label>
+                            <input type="password"
+                                   id="loginPassword"
+                                   class="form-group__input"
+                                   required
+                                   autocomplete="current_password"
+                                   data-validation="PASSWORD"
+                                   minlength="8">
+                            <button type="button"
+                                    class="form-group__toggle_password"
+                                    aria-label="Afficher le mot de passe">
+                                <i class="fas fa-eye"></i>
+                            </button>
+
+                            <span class="form-group__error" aria-live="polite"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group--checkbox">
+                        <input type="checkbox" id="rememberMe" class="form-group__checkbox">
+                        <label for="rememberMe" class="form-group__checkbox-label">Se souvenir de moi</label>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--full">
+                        <span class="btn__text">Se connecter</span>
+                        <span class="btn__loader"></span>
+                    </button>
+
+                    <div class="auth-form__separator">
+                        <span>ou</span>
+                    </div>
+
+                    <button type="button" class="btn btn--google btn--full">
+                        <img src="../images/icons/google_icon.png" alt="" class="btn__icon">
+                        <span class="btn__text">Continuer avec Google</span>
+                    </button>
+
+                    <!-- Switch forms to sign up -->
+                    <p class="auth-form__switch">
+                        Pas encore de compte?
+                        <a href="#" class="auth-form__switch-btn" id="switchToSignup">S'inscrire</a>
+                    </p>
+
+                </form>
+
+                <!-- signup form -->
+                <form id="signupForm" class="auth-form__form hidden" novalidate>
+
+                    <h2 class="auth-form__title">Salut !</h2>
+                    <p class="auth-form__subtitle">Entrez vos identifiants pour creer votre compte</p>
+
+                    <div class="form-group">
+
+                        <div class="form-group__input-container">
+                            <!-- to replace with 'pattern' from separate regex component -->
+
+                            <!-- name container -->
+                            <div class="fullname-containers">
+
+                                <label for="firstname" class="form-group__label">Nom</label>
+                                <input type="text"
+                                       class="form-group__input"
+                                       id="firstname"
+                                       required
+                                       autocomplete="name"
+                                       data-validation="NAME">
+                                <span class="form-group__error" aria-live="polite"></span>
+
+                                <label for="surname" class="form-group__label">Prenom</label>
+                                <input type="text"
+                                       class="form-group__input"
+                                       id="surname"
+                                       required
+                                       autocomplete="name"
+                                       data-validation="NAME">
+                                <span class="form-group__error" aria-live="polite"></span>
+
+                            </div>
+
+                            <!-- email container -->
+                            <label for="signupEmail" class="form-group__label">Email</label>
+                            <input type="email"
+                                   id="signupEmail"
+                                   class="form-group__input"
+                                   required
+                                   autocomplete="email"
+                                   data-validation="EMAIL">
+                            <span class="form-group__error" aria-live="polite"></span>
+
+                            <!-- password container -->
+                            <label for="signupPassword" class="form-group__label">Mot de passe</label>
+                            <input type="password"
+                                   id="signupPassword"
+                                   class="form-group__input"
+                                   required
+                                   autocomplete="current_password"
+                                   data-validation="PASSWORD"
+                                   minlength="8">
+                            <button type="button"
+                                    class="form-group__toggle_password"
+                                    aria-label="Afficher le mot de passe">
+                                <i class="fas fa-eye"></i>
+
+                            </button>
+
+                            <span class="form-group__error" aria-live="polite"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group--checkbox">
+                        <input type="checkbox" id="sign-meUp" class="form-group__checkbox">
+                        <label for="sign-meUp" class="form-group__checkbox-label">Inscrivez-moi a recevoir des mises a jour par email</label>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--full">
+                        <span class="btn__text">S'inscrire</span>
+                        <span class="btn__loader"></span>
+                    </button>
+
+                    <div class="auth-form__separator">
+                        <span>ou</span>
+                    </div>
+
+                    <button type="button" class="btn btn--google btn--full">
+                        <img src="../images/icons/google_icon.png" alt="" class="btn__icon">
+                        <span class="btn__text">Continuer avec Google</span>
+                    </button>
+
+                    <!-- Switch forms to log in -->
+                    <p class="auth-form__switch">
+                        Déjà un compte?
+                        <a href="#" class="auth-form__switch-btn" id="switchToLogin">Se connecter</a>
+                    </p>
+
+                </form>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script type="module" src="../js/components/authentication.js"></script>
+    <script type="module" src="../js/config.js"></script>
+
+</body>
+
+</html>
